@@ -1,0 +1,7 @@
+/target/
+/annotation-detector/target/
+/nb-configuration.xml
+.settings/
+.classpath
+.project
+/annotation-detector-webapp/target/

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>eu.infomas</groupId>
+        <artifactId>infomas-asl</artifactId>
+        <version>3.0.6-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <artifactId>annotation-detector</artifactId>
+    <version>3.0.6-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>INFOMAS ASL :: Annotation Detector 3.0.x</name>
+    <description>
+        Fast, lightweight, OSGi compliant scanner for Java Annotations.
+    </description>
+
+    <!-- this is a sub module and uses scm, issue and ci managment from the parent project -->
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jboss-vfs</artifactId>
+            <version>3.2.11.Final</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>eu.infomas.annotation</Export-Package>
+                        <Bundle-DocURL>http://rmuller.github.io/${project.artifactId}</Bundle-DocURL>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <configuration>
+                    <merge>true</merge>
+                    <path>annotation-detector</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
